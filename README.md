@@ -78,6 +78,22 @@ To add a new CSS kit to your registry:
 
 ---
 
+## 🌐 Deploying to GitHub Pages
+
+This project is fully configured for **1-click free hosting on GitHub Pages**! 
+
+1. Go to your repository on GitHub: `https://github.com/SAPTARSHI-coder/css-kit`
+2. Click on **Settings** ⚙️ at the top right of the repository.
+3. In the left sidebar, click on **Pages**.
+4. Under **Build and deployment** -> **Branch**:
+   - Select **`main`** branch
+   - Select folder **`/ (root)`**
+   - Click **Save**.
+5. Wait ~1-2 minutes! Your live site will be published at:
+   👉 **`https://saptarshi-coder.github.io/css-kit/`**
+
+---
+
 ## 📜 License
 
 This project is licensed under the ISC License.
