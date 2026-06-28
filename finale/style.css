@@ -1,0 +1,293 @@
+/* ===================== / / GROUP 1: UI MODULES  / / ===================== */
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding: 40px;
+}
+
+/* 1. Flip Card */
+.flip-card {
+  width: 200px;
+  height: 120px;
+  perspective: 1000px;
+}
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+.flip-front {
+  background: #f0f0f0;
+}
+.flip-back {
+  background: #6200ea;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* 2. Letter-by-Letter Reveal */
+.reveal-text {
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  gap: 5px;
+}
+.reveal-text span {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.5s forwards;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Typing Effect */
+.typing-box {
+  width: fit-content;
+  border-right: 2px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.typing-text {
+  font-family: monospace;
+  font-size: 20px;
+  animation: typing 4s steps(30) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* 4. Overlay on Hover */
+.overlay-card {
+  width: 200px;
+  height: 120px;
+  background: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+.overlay-content {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.overlay-card:hover .overlay-content {
+  transform: translateY(0);
+}
+
+/* 5. Staggered Grid Cards */
+.grid-container {
+  display: flex;
+  gap: 20px;
+}
+.grid-card {
+  width: 100px;
+  height: 100px;
+  background: #2196f3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.5s forwards;
+}
+.grid-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.grid-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.grid-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 6. CSS Modal */
+.open-modal-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #6200ea;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 9;
+}
+.modal-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+  z-index: 10;
+  text-align: center;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  font-weight: bold;
+}
+#modal-toggle:checked ~ .modal-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+#modal-toggle:checked ~ .modal-box {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ============================== / / GROUP 2: TRANSITION ANIMATIONS / / ============================== */
+
+.box-0,
+.box-1,
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.box-6,
+.box-7,
+.box-8,
+.box-9,
+.box-10,
+.box-11 {
+  background: #333;
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.box-0:hover {
+  transform: scale(1.2);
+}
+.box-1 {
+  opacity: 0.3;
+}
+.box-1:hover {
+  opacity: 1;
+}
+.box-2 {
+  transform: translateX(-100px);
+}
+.box-2:hover {
+  transform: translateX(0);
+}
+.box-3 {
+  transform: translateX(100px);
+}
+.box-3:hover {
+  transform: translateX(0);
+}
+.box-4 {
+  transform: translateY(-100px);
+}
+.box-4:hover {
+  transform: translateY(0);
+}
+.box-5 {
+  transform: translateY(100px);
+}
+.box-5:hover {
+  transform: translateY(0);
+}
+.box-6 {
+  transform: translate(-100px, -100px);
+}
+.box-6:hover {
+  transform: translate(0, 0);
+}
+.box-7 {
+  transform: translate(100px, -100px);
+}
+.box-7:hover {
+  transform: translate(0, 0);
+}
+.box-8 {
+  transform: translate(-100px, 100px);
+}
+.box-8:hover {
+  transform: translate(0, 0);
+}
+.box-9 {
+  transform: translate(100px, 100px);
+}
+.box-9:hover {
+  transform: translate(0, 0);
+}
+.box-10:hover {
+  transform: rotate(15deg);
+}
+.box-11:hover {
+  transform: rotateY(180deg);
+}

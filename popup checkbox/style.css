@@ -1,0 +1,53 @@
+/* Hidden checkbox */
+#modal-toggle {
+  display: none;
+}
+
+/* Trigger button */
+.open-btn {
+  background: #007bff;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Modal backdrop */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* Modal box */
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}
+
+/* When checkbox is checked, show modal */
+#modal-toggle:checked ~ .modal {
+  opacity: 1;
+  pointer-events: auto;
+}

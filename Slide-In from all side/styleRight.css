@@ -1,0 +1,23 @@
+.slide-right-box {
+  width: 300px;
+  height: 150px;
+  border: 2px solid #ccc;
+  margin-bottom: 30px;
+  background-color: rosybrown;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-right {
+  position: absolute;
+  right: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.4s ease;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.slide-right-box:hover .slide-right {
+  right: 10px;
+}

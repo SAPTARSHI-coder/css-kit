@@ -1,0 +1,17 @@
+.fade-delay {
+  opacity: 0;
+  animation: fadeInDelayed 1s ease forwards;
+  animation-delay: 2s;
+  font-weight: bold;
+  text-align: center;
+  background: #fafafa;
+  padding: 40px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+@keyframes fadeInDelayed {
+  to {
+    opacity: 1;
+  }
+}

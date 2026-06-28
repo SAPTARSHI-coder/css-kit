@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* Outer container */
+.slide-box {
+  width: 300px;
+  height: 150px;
+  background: white;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Content that slides in */
+.slide-content {
+  position: absolute;
+  left: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 20px;
+  color: #333;
+  transition: left 0.4s ease;
+}
+
+/* Hover effect ONLY triggers text sliding in */
+.slide-box:hover .slide-content {
+  left: 10px;
+}

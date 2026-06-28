@@ -1,0 +1,23 @@
+.slide-bottom-box {
+  width: 300px;
+  height: 150px;
+  border: 2px solid #ccc;
+  background-color: rgb(118, 118, 231);
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-bottom {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 0.4s ease;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.slide-bottom-box:hover .slide-bottom {
+  bottom: 10px;
+}

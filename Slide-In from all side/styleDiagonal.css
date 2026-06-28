@@ -1,0 +1,24 @@
+.slide-diagonal-box {
+  width: 300px;
+  height: 150px;
+  border: 2px solid #ccc;
+  margin-bottom: 30px;
+  background-color: rgb(255, 35, 163);
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-diagonal {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  transition: top 0.4s ease, left 0.4s ease;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.slide-diagonal-box:hover .slide-diagonal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

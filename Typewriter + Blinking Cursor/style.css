@@ -1,0 +1,21 @@
+.typewriter {
+  font-family: monospace;
+  font-size: 28px;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  width: fit-content;
+  animation: typing 3s steps(21, end), blink 0.7s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 21ch }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% { border-color: transparent }
+}

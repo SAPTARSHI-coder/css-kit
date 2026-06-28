@@ -1,0 +1,13 @@
+.btn-press {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.95);
+}

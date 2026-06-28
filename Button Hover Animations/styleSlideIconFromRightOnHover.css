@@ -1,0 +1,22 @@
+.btn-slide-icon {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.btn-slide-icon span {
+  display: inline-block;
+  transform: translateX(10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-slide-icon:hover span {
+  transform: translateX(0);
+  opacity: 1;
+}

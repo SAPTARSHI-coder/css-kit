@@ -1,0 +1,20 @@
+.fade-hover-box {
+  width: 300px;
+  height: 150px;
+  background: #eee;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-hover {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.fade-hover-box:hover .fade-hover {
+  opacity: 1;
+}

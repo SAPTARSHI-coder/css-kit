@@ -1,0 +1,21 @@
+.bounce-box {
+  width: 120px;
+  height: 60px;
+  background: #ffc107;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+  border-radius: 6px;
+  animation: bounce 1s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: -15px;
+  }
+}

@@ -1,0 +1,47 @@
+/* Container setup */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  background: #f0f0f0;
+}
+
+/* Individual cards */
+.card {
+  width: 180px;
+  height: 240px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+/* Zoom + bring to front on hover */
+.card:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+/* Blur and fade others when container is hovered */
+.container:hover .card {
+  filter: blur(2px);
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* Keep hovered card clean and zoomed */
+.container:hover .card:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.1);
+}

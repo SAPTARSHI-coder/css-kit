@@ -1,0 +1,21 @@
+.float-box {
+  width: 120px;
+  height: 60px;
+  background: #17a2b8;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+  border-radius: 8px;
+  animation: float 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes float {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+}

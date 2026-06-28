@@ -1,0 +1,20 @@
+.fade-out-box {
+  width: 300px;
+  height: 150px;
+  background: #ddd;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-out {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.fade-out-box:hover .fade-out {
+  opacity: 0;
+}
