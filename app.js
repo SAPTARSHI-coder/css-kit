@@ -14,16 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
   let kitsData = null;
   let activeCategory = null;
 
-  // Fetch the kits data dynamically from Express API
+  // Fetch the kits data dynamically from Express API or fallback to static JSON for GitHub Pages
   fetch('/api/kits')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error('API not available');
+      return response.json();
+    })
+    .catch(() => {
+      // Fallback for static hosting like GitHub Pages
+      return fetch('kitsData.json').then(res => res.json());
+    })
     .then(data => {
       kitsData = data.categories;
       renderSidebar();
     })
     .catch(error => {
       console.error('Error loading kits data:', error);
-      welcomeView.innerHTML = `<div class="glass-card welcome-card"><h2>Error</h2><p>Failed to load API data. Make sure server.js is running.</p></div>`;
+      welcomeView.innerHTML = `<div class="glass-card welcome-card"><h2>Error</h2><p>Failed to load CSS kit data.</p></div>`;
     });
 
   function renderSidebar() {
